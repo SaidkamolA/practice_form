@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+<div>
+<form action="" method="post">
+    {% csrf_token %}
+    <h3>Название:</h3>
+    <input type="text" name="name"/>
+    <br>
+    <h3>Описание:</h3>
+    <textarea name="description"> </textarea>
+    <br>
+    <h3>Цена:</h3>
+    <input type="number" name="price">
+    <br>
+    <h3>Кол-во:</h3>
+    <input type="number" name="count">
+    <br>
+    <br>
+        <select name="category_id">
+        <option value="1">1</option>
+        <option value="2">2</option>
+    </select>
+    <br>
+    <br>
+    <input type="submit" value="Изменить"/>
+    <br>
+    <br>
+    <a href="{% url 'index' %}">Обратно</a>
+</form>
+</div>
+
+{% endblock content %}

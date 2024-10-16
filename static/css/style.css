@@ -1,0 +1,44 @@
+body{
+    background-color: rebeccapurple;
+}
+div{
+    color: snow;
+    padding: 20px; 
+    border: 7px solid ; 
+    border-color: black;
+    border-radius: 7px; 
+    text-align: center;
+}
+a{
+    text-align: center;
+    color: snow;
+    text-decoration:none
+}
+
+p{
+    color: snow;
+    padding: 20px; 
+    border: 7px; 
+    border-color: black;
+    border-radius: 7dvb; 
+    text-align: center;
+}
+.cards{
+    border: 0px solid ;
+    display:flex;
+    justify-content: space-around;
+    flex-wrap:wrap;
+}
+
+.pages a{
+    font-size: 25px;
+    font-weight: 600;
+}
+span{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.forma{
+    text-align: center;
+}

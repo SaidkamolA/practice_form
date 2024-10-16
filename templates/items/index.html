@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+
+<!--<p>{{ item.id }}</p>-->
+<!--<p>{{ item.name }}</p>-->
+<!--<p>{{ item.description }}</p>-->
+
+
+<a href="{% url 'index' %}?page=1&limit=1">1</a>
+<a href="{% url 'index' %}?page=1&limit=2">2</a>
+<a href="{% url 'index' %}?page=1&limit=3">3</a>
+<a href="{% url 'index' %}?page=1&limit=4">4</a>
+<a href="{% url 'index' %}?page=1&limit=5">5</a>
+
+<div class="cards">
+{% for item in items %}
+<div>
+    <a href="{% url 'get_item' item.id %}">{{item.name}}</a>
+        <p>{{ item.price }}</p>
+        <p>{{ item.count }}</p>
+    <a href="{% url 'izmen' item.id %}">Изменить товар</a>
+    <br>
+    <a href="{% url 'udalenie' item.id %}">Удалить товар</a>
+</div>
+
+
+{% endfor %}
+</div>
+
+
+<div>
+    <a href="{% url 'dobavlenie' %}">Добавить товар</a>
+</div>
+
+<div class="pages">
+    {% if page > 1 %}
+        <a href="{% url 'index' %}?page={{page|add:-1}}&limit={{limit}}"> << </a>
+    {% endif %}
+    <span>{{page}}</span>
+    {% if page < all_p %}
+        <a href="{% url 'index' %}?page={{page|add:1}}&limit={{limit}}"> >> </a>
+    {% endif %}
+
+</div>
+<!--{% if ... %}-->
+
+<!--{% elif ... %}-->
+
+<!--{% else %}-->
+
+<!--{% endif %}-->
+
+{% endblock content %}
+
+
+

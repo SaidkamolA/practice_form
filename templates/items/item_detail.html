@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+<div>
+<p>НАЗВАНИЕ : {{ item.name }}</p>
+<p>ОПИСАНИЕ : {{ item.description }}</p>
+<p>ЦЕНА : {{ item.price }}</p>
+<p>КОЛ-ВО : {{ item.count }}</p>
+<p>АЙДИ : {{ item.id }}</p>
+<a href="{% url 'index' %}">ПЕРЕХОД</a>
+</div>
+{% endblock content %}

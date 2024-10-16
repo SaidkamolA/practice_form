@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+
+<form action="" method="post" class="forma">
+    {% csrf_token %}
+
+    {% for field in form %}
+    <div>
+        {{field.label_tag}}
+        <br>
+        {{field}}
+        {{field.errors}}
+        <br>
+        <br>
+    </div>
+    {% endfor %}
+
+    <input type="submit" value="ОТПРАВИТЬ"/>
+
+</form>
+
+{% endblock content %}
